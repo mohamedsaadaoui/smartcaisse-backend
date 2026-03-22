@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import tn.smartcaisse.dto.*;
 import tn.smartcaisse.repository.UserRepository;
 import tn.smartcaisse.security.JwtUtil;
+import tn.smartcaisse.security.UserDetailsServiceImpl;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -16,7 +17,7 @@ public class AuthController {
 
     private final AuthenticationManager authManager;
     private final JwtUtil jwtUtil;
-    private final UserDetailsService userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
     private final UserRepository userRepository;
 
     @PostMapping("/login")
